@@ -1,7 +1,3 @@
-
-
-
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PropTypes from 'prop-types';
 import Navbar from './components/Navbar';
@@ -17,17 +13,15 @@ App.defaultProps = defaultProps;
 function App() {
   return (
     <>
-  
         <Router>
           <Navbar />
-          <div className="container">
+          <div>
           <Routes>
             <Route exact path="/" element={<Anime />} />
             <Route exact path="/sanime" element={<Sanime />} />
           </Routes>
           </div>
         </Router>
-  
     </>
   );
 }

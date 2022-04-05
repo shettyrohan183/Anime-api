@@ -1,5 +1,8 @@
+
 import React, { Component } from 'react'
 import Animeitem from './Animeitem';
+// import Sanime from './Sanime';
+import "../App.css";
 
 export class Anime extends Component {
     constructor(){
@@ -18,19 +21,10 @@ export class Anime extends Component {
                 this.setState({articles : data})
             })
     }
-        // let data = await fetch(url);
-        // let parseddata = await data.json();
-        // console.log(parseddata)
-        // this.setState({articles: parseddata.articles})
-
-      
-     
+       
   render() {
     console.log("results : ", this.state.articles);
     return (
-        //  <div>
-        //    app this is
-        //  </div>
         <div className="container my-3">
         <h2>Anime - Top Headlines</h2>
         <div className="row">
@@ -49,6 +43,6 @@ export class Anime extends Component {
         </div>
     );
   }
-
 }
+
 export default Anime;
