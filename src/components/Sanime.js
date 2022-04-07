@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import "../App.css";
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import AddLocationIcon from '@mui/icons-material/AddLocation';
+import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled';
+import { IconButton } from '@mui/material';
 export class Sanime extends Component {
   constructor() {
     super();
@@ -11,9 +15,9 @@ export class Sanime extends Component {
   }
   async componentDidMount() {
     fetch(
-  "https://ghibliapi.herokuapp.com/films/790e0028-a31c-4626-a694-86b7a8cada40"    
+  // "https://ghibliapi.herokuapp.com/films/790e0028-a31c-4626-a694-86b7a8cada40"    
   // "https://ghibliapi.herokuapp.com/films/12cfb892-aac0-4c5b-94af-521852e46d6a"
-    //  "https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe"
+     "https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe"
     // "https://ghibliapi.herokuapp.com/films/5fdfb320-2a02-49a7-94ff-5ca418cae602"
     )
       .then((response) => {
@@ -24,37 +28,10 @@ export class Sanime extends Component {
       });
   }
   
-  // extractData(text) {
-  //   var doc = new DOMParser().parseFromString(text, 'text');
-  //   var items_array = [];
-   
-  //   for (var i = 0; i <text.length; i++) {
-  //     items_array.push({
-  //       name: text[i].getElementsByTagName('name')[0].lastChild.data,                
-  //     })
-  //   }
-  //   return items_array;
-  // }
-  // fetchData() {
-  //   var urlArray = [];
+async  vehicle(){
+    
 
-  //   for (var i = 0; i < `{this.state.sarticles.people}`.length; i++) {
-  //     urlArray.push(`{this.state.sarticles.people}`[i]);
-  //   }
-
-  //   fetch(urlArray)
-  //     .then((response) => response.text())
-  //     .then((responseData) => {
-  //       this.setState({
-  //         peoplea: responseData
-  //       });
-  //     }).catch((error) => console.error(error))
-  // }
-
-
-  // componentDidMount() {
-  //   this.fetchData();
-  // }
+ };
   render() {
     const myStyle={
         backgroundImage: 
@@ -67,6 +44,7 @@ export class Sanime extends Component {
     
     console.log(this.state.sarticles);
     // console.log("this is ",this.state.peoplea);
+    // console.log("vehicles" ,this.state.sarticles.original_title_romanised);
 
 
     return (
@@ -90,11 +68,23 @@ export class Sanime extends Component {
               </div>
               <div className="title3">
                 {this.state.sarticles.original_title_romanised}
+               
+
               </div>
+              {/* <div class="mr-grid action-row">
+            <div class="col2"><div class="watch-btn"><i class="material-icons">&#xE037;</i>  WATCH TRAILER</div>
+            </div>
+            </div> */}
             </div>
           </div>
 
           <div className="description">
+          <div class="mr-grid action-row">
+            <div class="col2"><div class="watch-btn"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-square-fill" viewBox="0 0 16 16">
+  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z"/>
+</svg> WATCH TRAILER</div>
+            </div>
+            </div>
             <div className="column">
               <p>{this.state.sarticles.description}</p>
               <div className="dir-rel">
@@ -110,13 +100,14 @@ export class Sanime extends Component {
             </div>
            
           </div>
-          {/* <div>
-          {this.state.peoplea.map((element)=>{
-           return <div key={element.id}>
-             people :{this.state.people.name}
+            <div className="others">
+<IconButton onClick={() => { console.log('onClick'); }}><PeopleAltIcon />
+</IconButton>
+<IconButton><AddLocationIcon />
+</IconButton>
+<IconButton><DirectionsCarFilledIcon />
+</IconButton>
             </div>
-          })}
-          </div> */}
         </div>
       </div>
     );

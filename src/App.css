@@ -41,6 +41,23 @@
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 
+.icons{
+  display: flex;
+  flex-direction: row;
+}
+.icons1{
+ 
+  padding-right: 75px;
+
+
+}
+.icons2{
+  display: flex;
+  flex-direction: row;
+}
+.action-btn1{
+  padding-right: 15px;
+}
 a {
   text-decoration: none;
   color: black;
@@ -49,7 +66,10 @@ a {
 a:hover {
   text-decoration: underline;
 }
-
+.btn{
+  width: fit-content;
+  height: fit-content;
+}
 .movie-card {
   font: 14px/22px "Lato", Arial, sans-serif;
   color: black;
@@ -127,11 +147,50 @@ element.style {
 }
 
 .description {
+  display: flex;
+  flex-direction: column;
   bottom: 0px;
   height: 250px;
   font-size: 16px;
   line-height: 26px;
   color: black;
+}
+.action-btn{
+  text-align:right;
+}
+.action-btn i{
+  color:black;
+  font-size:28px;
+  text-align:right;
+  
+}
+.mr-grid {
+   width: auto;
+   padding-left: 55px;
+   padding-top: 10px;
+   }
+  
+
+.watch-btn {
+  font-size:14px;
+  margin-right:2px;
+  /* position: relative; */
+  float: left;
+  line-height: 1;  
+  display:block;
+  border:3px solid black;
+  /* border:3px solid white; */
+  border-radius:5px;
+  padding:4px;
+  width:145px;
+  font-weight: bold;
+  color: black;
+  /* color: white; */
+}
+
+
+.action-row{
+  margin-top:24px;
 }
 
 .column {
@@ -149,4 +208,14 @@ element.style {
 }
 .dir {
   padding-right: 100px;
+}
+.others{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+ width: 150px;
+ padding-bottom: 50px;
+ /* padding-left: 100px; */
 }
