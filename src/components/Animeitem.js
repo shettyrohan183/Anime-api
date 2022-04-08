@@ -1,15 +1,24 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import "../App.css";
-// import { Link } from 'react-router-dom';
+import { seturl } from './state/action-creater';
+import { connect } from 'react-redux';
+import { actionCreators } from './state/index'
+const mapDispatchToProps=(dispatch ,url)=>{
+  console.log("vsjvaj",url.url);
+  return{
+    seturl:()=>dispatch(actionCreators.seturl(url))
+  }
+}
 export class Animeitem extends Component {
   render() {
       let {
           title,
           image,
           description,
+          url
       } = this.props
-      
+    
     return (
         <div className="my-3">
         <div className="card" style={{width: "18rem"}}>
@@ -19,7 +28,7 @@ export class Animeitem extends Component {
             <p className="card-text">{description}</p>
             <div className="icons">
               <div className='icons1'>
-            <Link rel="noreferrer" to="/Sanime" target="_blank" className="btn btn-sn btn-dark">
+            <Link rel="noreferrer" to="/Sanime" target="_blank" className="btn btn-sn btn-dark" onClick={()=>{seturl({url})}}>
               ReadMore...
             </Link>
             </div>
@@ -41,5 +50,4 @@ export class Animeitem extends Component {
   }
 }
 
-export default Animeitem;
-
+export default connect(mapDispatchToProps)(Animeitem)

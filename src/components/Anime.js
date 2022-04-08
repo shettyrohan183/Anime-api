@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react'
 import Animeitem from './Animeitem';
-// import Sanime from './Sanime';
 import "../App.css";
 
 export class Anime extends Component {

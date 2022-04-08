@@ -11,10 +11,12 @@ App.defaultProps = defaultProps;
 // #endregion
 
 function App() {
+ 
   return (
     <>
+   
         <Router>
-          <Navbar />
+          <Navbar/>
           <div>
           <Routes>
             <Route exact path="/" element={<Anime />} />
@@ -22,6 +24,7 @@ function App() {
           </Routes>
           </div>
         </Router>
+       
     </>
   );
 }

@@ -3,9 +3,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
+clone the repository in ur local system by using the comment
+### 'git clone https://github.com/shettyrohan183/anime-api'
+
+after clonning cd through the repository
+### 'cd anime-api'
+
+install the dependecies
+### 'npm install'
 
 In the project directory, you can run:
-
 ### `npm start`
 
 Runs the app in the development mode.\

@@ -4,12 +4,18 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import AddLocationIcon from '@mui/icons-material/AddLocation';
 import DirectionsCarFilledIcon from '@mui/icons-material/DirectionsCarFilled';
 import { IconButton } from '@mui/material';
+import { connect } from "react-redux";
+
+const mapStateToprops=(props)=>{
+  return{
+    urls:props.urls
+  }
+}
 export class Sanime extends Component {
   constructor() {
     super();
     this.state = {
       sarticles: [],
-      // peoplea:[],
       loading: false,
     };
   }
@@ -17,8 +23,9 @@ export class Sanime extends Component {
     fetch(
   // "https://ghibliapi.herokuapp.com/films/790e0028-a31c-4626-a694-86b7a8cada40"    
   // "https://ghibliapi.herokuapp.com/films/12cfb892-aac0-4c5b-94af-521852e46d6a"
-     "https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe"
+    //  "https://ghibliapi.herokuapp.com/films/2baf70d1-42bb-4437-b551-e5fed5a87abe"
     // "https://ghibliapi.herokuapp.com/films/5fdfb320-2a02-49a7-94ff-5ca418cae602"
+    this.props.urls
     )
       .then((response) => {
         return response.json();
@@ -28,10 +35,7 @@ export class Sanime extends Component {
       });
   }
   
-async  vehicle(){
-    
 
- };
   render() {
     const myStyle={
         backgroundImage: 
@@ -42,10 +46,9 @@ async  vehicle(){
        
     };
     
-    console.log(this.state.sarticles);
-    // console.log("this is ",this.state.peoplea);
-    // console.log("vehicles" ,this.state.sarticles.original_title_romanised);
-
+   
+  
+    
 
     return (
       <div className="movie-card">
@@ -71,10 +74,6 @@ async  vehicle(){
                
 
               </div>
-              {/* <div class="mr-grid action-row">
-            <div class="col2"><div class="watch-btn"><i class="material-icons">&#xE037;</i>  WATCH TRAILER</div>
-            </div>
-            </div> */}
             </div>
           </div>
 
@@ -114,4 +113,4 @@ async  vehicle(){
   }
 }
 
-export default Sanime;
+export default connect(mapStateToprops)(Sanime);
